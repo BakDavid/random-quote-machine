@@ -54,6 +54,66 @@ npm run dev
 
 5.  Open the app in your browser at http://localhost:5173 (or the default URL provided by Vite).
 
+## Deployment to GitHub Pages
+
+### 1. Install `gh-pages` (GitHub Pages deployment package)
+
+To deploy the app to GitHub Pages, first install the `gh-pages` package:
+
+```
+npm install --save-dev gh-pages
+```
+
+### 2. Update `vite.config.ts`
+
+In your `vite.config.ts` file, set the base option to your GitHub repository name (this is required for the app to work correctly when served from a subdirectory).
+
+For example, if your GitHub repository is called `random-quote-machine`, update the `vite.config.ts` file like this:
+
+```
+export default defineConfig({
+    plugins: [react()],
+    base: '/random-quote-machine/', // Adjust this based on your GitHub repository name
+})
+```
+
+### 3. Add Deployment Scripts to `package.json`
+
+In your `package.json`, add two scripts for deploying to GitHub Pages:
+
+```
+"scripts": {
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+}
+```
+
+predeploy: Runs the build command before deploying.
+deploy: Deploys the contents of the dist/ folder to GitHub Pages.
+
+### 4. Deploy to GitHub Pages
+
+To deploy your app to GitHub Pages, run the following command:
+
+```
+npm run deploy
+```
+
+After a successful deployment, your app will be available at:
+
+https://your-username.github.io/random-quote-machine/
+Replace `your-username` with your actual GitHub username.
+
+### 5. Set GitHub Pages Branch
+
+Make sure that your GitHub repository is set to use the `gh-pages` branch for GitHub Pages deployment.
+
+To do this:
+
+-   Go to your GitHub repository page.
+-   Navigate to Settings > Pages.
+-   Under Source, choose the `gh-pages` branch (it should appear once you deploy your site for the first time).
+
 ## Usage
 
 1. Click on New Quote to get a random quote.
@@ -63,3 +123,15 @@ npm run dev
 ## License
 
 This project is licensed under the MIT License.
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
