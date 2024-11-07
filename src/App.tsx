@@ -52,9 +52,28 @@ function App() {
         setCurrentQuote(randomQuote.quote);
         setCurrentAuthor(randomQuote.author);
 
-        // Change background color
+        // Set the page title to the current quote
+        document.title = `${randomQuote.quote} - ${randomQuote.author}`;
+
+        // Add the 'show' class to trigger the fade-in effect
+        const quoteTextElement = document.querySelector(".quote-text");
+        const quoteAuthorElement = document.querySelector(".quote-author");
+
+        if (quoteTextElement && quoteAuthorElement) {
+            quoteTextElement.classList.remove("show");
+            quoteAuthorElement.classList.remove("show");
+            setTimeout(() => {
+                quoteTextElement?.classList.add("show");
+                quoteAuthorElement?.classList.add("show");
+            }, 200);
+        }
+
+        // Change background color and button color
         const color = colors[Math.floor(Math.random() * colors.length)];
         document.body.style.backgroundColor = color;
+        document.querySelectorAll(".button").forEach((button) => {
+            (button as HTMLElement).style.backgroundColor = color;
+        });
     };
 
     const tweetQuote = () => {

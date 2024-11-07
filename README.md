@@ -2,6 +2,14 @@
 
 This is a random quote generator app built with React and TypeScript. It fetches random quotes from an external API and displays them with a nice background color. You can also tweet the quote directly from the app.
 
+## Live Demo
+
+You can check out the live version of the app on GitHub Pages:
+
+Random Quote Machine - [Live Demo](https://bakdavid.github.io/random-quote-machine/)
+
+Make sure to replace your-username with your GitHub username.
+
 ## Features
 
 -   Displays a random quote with the author.
@@ -41,7 +49,7 @@ npm install
 4. Run the project
 
 ```
-   npm run dev
+npm run dev
 ```
 
 5.  Open the app in your browser at http://localhost:5173 (or the default URL provided by Vite).

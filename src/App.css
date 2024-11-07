@@ -28,6 +28,7 @@ body {
     padding: 30px;
     width: 400px;
     max-width: 90vw;
+    transition: background-color 1s ease;
 }
 
 .quote-text {
@@ -54,7 +55,7 @@ body {
     cursor: pointer;
     margin-right: 10px;
     text-decoration: none;
-    transition: background-color 1s ease;
+    transition: background-color 1s ease, opacity 1s ease;
 }
 
 .button:hover {
@@ -63,4 +64,17 @@ body {
 
 #tweet-quote {
     font-size: 1.2em;
+}
+
+/* Add transitions for smooth color change */
+.quote-text,
+.quote-author {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* When data is updated, apply fade-in */
+.quote-text.show,
+.quote-author.show {
+    opacity: 1;
 }
